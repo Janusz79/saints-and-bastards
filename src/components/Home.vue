@@ -326,9 +326,11 @@ const stopDrag = () => {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   max-width: 1400px;
-  margin: -2rem auto 4rem auto;
+  margin: -35rem auto 4rem auto;
   padding: 4rem 2rem;
   background: #000;
+  position: relative;
+  z-index: 10;
 }
 
 .info-box {
