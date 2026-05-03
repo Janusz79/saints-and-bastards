@@ -162,9 +162,10 @@ const stopDrag = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
   z-index: 2;
   pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .hero-gradient-overlay-bottom {
@@ -173,9 +174,10 @@ const stopDrag = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
   z-index: 2;
   pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .hero-content {
