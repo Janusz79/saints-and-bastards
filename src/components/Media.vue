@@ -23,15 +23,17 @@
     </div>
 
     <!-- Video Modal -->
-    <div v-if="showModal" class="video-modal" @click.self="closeVideo">
-      <div class="modal-content">
-        <button class="close-btn" @click="closeVideo">✕</button>
-        <video controls autoplay preload="metadata">
-          <source :src="selectedVideoSrc" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+    <Transition name="modal-fade">
+      <div v-if="showModal" class="video-modal" @click.self="closeVideo">
+        <div class="modal-content">
+          <button class="close-btn" @click="closeVideo">✕</button>
+          <video controls autoplay preload="metadata">
+            <source :src="selectedVideoSrc" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-    </div>
+    </Transition>
   </section>
 </template>
 
@@ -171,7 +173,8 @@ const closeVideo = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,33 +211,47 @@ const closeVideo = () => {
   height: 100%;
 }
 
-.media-item.video .media-thumb {
-  color: #ff0000;
+/* Modal Transition */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 
-.media-item.gallery .media-thumb {
-  background: rgba(0, 150, 255, 0.1);
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
 }
 
-.media-item.gallery .media-thumb {
-  color: #0096ff;
+.modal-fade-enter-active .modal-content {
+  animation: modal-slide-in 0.3s ease;
 }
 
-.media-item.album .media-thumb {
-  background: rgba(100, 200, 255, 0.1);
+.modal-fade-leave-active .modal-content {
+  animation: modal-slide-out 0.3s ease;
 }
 
-.media-item.album .media-thumb {
-  color: #64c8ff;
+@keyframes modal-slide-in {
+  from {
+    transform: scale(0.9) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
 
-.media-item.podcast .media-thumb {
-  background: rgba(200, 100, 255, 0.1);
+@keyframes modal-slide-out {
+  from {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9) translateY(-20px);
+    opacity: 0;
+  }
 }
 
-.media-item.podcast .media-thumb {
-  color: #c864ff;
-}
 
 @media (max-width: 768px) {
   .media h2 {
@@ -242,7 +259,9 @@ const closeVideo = () => {
   }
 
   .media-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+
   }
 
   .media-thumb svg {
