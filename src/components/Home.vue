@@ -49,6 +49,59 @@
       </div>
     </div>
   </section>
+
+  <!-- Info Boxes Section -->
+  <section class="info-boxes">
+    <!-- Who We Are Box -->
+    <div class="info-box who-we-are">
+      <h3>WHO WE ARE</h3>
+      <h4>INDUSTRIAL GRUNGE FROM VIAREGGIO</h4>
+      <p>Saints & Bastards is an industrial grunge band born in Viareggio, Italy. We blend 90s rage and modern sound research with politically charged lyrics about climate, inequality, depression and social injustice. Duality. Truth. Action.</p>
+      <a href="#" @click="$emit('navigate', 'band')" class="read-more">READ MORE</a>
+    </div>
+
+    <!-- Latest From The Lab Box -->
+    <div class="info-box latest-lab">
+      <h3>LATEST FROM THE LAB</h3>
+      <div class="lab-content">
+        <img src="/images/hero-left.jpg" alt="Latest Work" />
+      </div>
+      <p>WORKING ON OUR DEBUT ALBUM</p>
+      <p class="small">STAY TUNED</p>
+    </div>
+
+    <!-- Upcoming Shows Box -->
+    <div class="info-box upcoming-shows">
+      <h3>UPCOMING SHOWS</h3>
+      <div class="shows-list">
+        <div class="show-item">
+          <span class="date">01 <span class="month">MAY</span></span>
+          <div class="show-details">
+            <p>POOL JAZZ CLUB</p>
+            <p>VIAREGGIO, ITALY</p>
+            <p class="status sold-out">SOLD OUT</p>
+          </div>
+        </div>
+        <div class="show-item">
+          <span class="date">12 <span class="month">JUN</span></span>
+          <div class="show-details">
+            <p>TBA</p>
+            <p>ITALY</p>
+            <p class="status info-soon">INFO SOON</p>
+          </div>
+        </div>
+        <div class="show-item">
+          <span class="date">03 <span class="month">JUL</span></span>
+          <div class="show-details">
+            <p>TBA</p>
+            <p>ITALY</p>
+            <p class="status info-soon">INFO SOON</p>
+          </div>
+        </div>
+      </div>
+      <a href="#" @click="$emit('navigate', 'live')" class="view-all">VIEW ALL DATES</a>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -162,7 +215,7 @@ const stopDrag = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%);
   z-index: 2;
   pointer-events: none;
   mix-blend-mode: multiply;
@@ -174,7 +227,7 @@ const stopDrag = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 40%);
   z-index: 2;
   pointer-events: none;
   mix-blend-mode: multiply;
@@ -264,6 +317,184 @@ const stopDrag = () => {
   .reveal-handle {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* Info Boxes Section */
+.info-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.info-box {
+  padding: 2rem;
+  border-left: 3px solid;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  opacity: 0.7;
+}
+
+.info-box h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+}
+
+.info-box .small {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Who We Are Box */
+.who-we-are {
+  border-left-color: #4a9eff;
+}
+
+.who-we-are h3,
+.who-we-are h4 {
+  color: #4a9eff;
+}
+
+.read-more {
+  color: #4a9eff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.read-more:hover {
+  opacity: 0.7;
+}
+
+/* Latest From The Lab Box */
+.latest-lab {
+  border-left-color: #fff;
+}
+
+.latest-lab h3,
+.latest-lab h4 {
+  color: #fff;
+}
+
+.lab-content {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lab-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Upcoming Shows Box */
+.upcoming-shows {
+  border-left-color: #ff6b35;
+}
+
+.upcoming-shows h3,
+.upcoming-shows h4 {
+  color: #ff6b35;
+}
+
+.shows-list {
+  margin-bottom: 1.5rem;
+}
+
+.show-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.show-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.date {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-width: 50px;
+  color: #ff6b35;
+}
+
+.date .month {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.show-details p {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.85rem;
+}
+
+.show-details .status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 0.3rem;
+}
+
+.status.sold-out {
+  color: #ff6b35;
+}
+
+.status.info-soon {
+  color: #aaa;
+}
+
+.view-all {
+  color: #ff6b35;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.view-all:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .info-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 </style>
