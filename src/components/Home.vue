@@ -327,15 +327,18 @@ const stopDrag = () => {
   gap: 2rem;
   max-width: 1400px;
   margin: 4rem auto;
-  padding: 0 2rem;
+  padding: 4rem 2rem;
+  background: #000;
 }
 
 .info-box {
   padding: 2rem;
   border-left: 3px solid;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .info-box h3 {
