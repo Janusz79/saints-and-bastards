@@ -27,7 +27,7 @@
 
       <!-- Mobile Menu Drawer -->
       <nav class="mobile-menu" :class="{ open: mobileMenuOpen }">
-        <div class="mobile-menu-links">
+        <div class="mobile-menu-links" >
           <a href="#home" @click="currentPage = 'home'; mobileMenuOpen = false">HOME</a>
           <a href="#band" @click="currentPage = 'band'; mobileMenuOpen = false">BAND</a>
           <a href="#music" @click="currentPage = 'music'; mobileMenuOpen = false">MUSIC</a>
@@ -252,27 +252,26 @@ footer p {
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 0;
+  top: calc(-100% - -250px);
   left: 0;
   right: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
-  height: 100vh;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: top 0.3s ease;
   z-index: 200;
-  overflow: hidden;
 }
 
 .mobile-menu-links {
   position: relative;
-  top: -250px;
-  transition: top 0.3s ease;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  
 }
 
-.mobile-menu.open .mobile-menu-links {
+.mobile-menu.open {
   top: 0;
 }
 
@@ -281,15 +280,21 @@ footer p {
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 0;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius:0 0 130px 130px ;
   cursor: pointer;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100px;
+  margin: auto;
+}
+
+.mobile-menu-logo h1 {
+  display: none;
 }
 
 .mobile-menu-logo .band-logo {
-  height: 50px;
-  width: auto;
+  height: 70px;
+  width: 70px;
   opacity: 0.95;
   transition: opacity 0.3s;
 }
@@ -299,15 +304,18 @@ footer p {
 }
 
 .mobile-menu a {
+background: rgba(0, 0, 0, 0.95);
   padding: 1rem 2rem;
   color: #fff;
   text-decoration: none;
   font-family: 'Orbitron', sans-serif;
+  text-align: center;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0,0,0, 1);
+  margin-top: -1px;
   transition: background 0.3s;
   cursor: pointer;
 }

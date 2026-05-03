@@ -54,9 +54,9 @@
   <section class="info-boxes">
     <!-- Who We Are Box -->
     <div class="info-box who-we-are">
-      <h3>WHO WE ARE</h3>
-      <h4>INDUSTRIAL GRUNGE FROM VIAREGGIO</h4>
-      <p>Saints & Bastards is an industrial grunge band born in Viareggio, Italy. We blend 90s rage and modern sound research with politically charged lyrics about climate, inequality, depression and social injustice. Duality. Truth. Action.</p>
+      <h3>CHI SIAMO</h3>
+      <h4>INDUSTRIAL GRUNGE DI VIAREGGIO</h4>
+      <p>Saints & Bastards è una band Industrial Grunge di Viareggio che unisce l’aggressività degli anni ’90 a una ricerca sonora contemporanea. Tra influenze che vanno da Pantera a Tool, il progetto esplora la dualità dell’essere umano: santo e bastardo allo stesso tempo. Testi diretti, politicamente impegnati, e un sound denso e stratificato trasformano rabbia e disillusione in energia e azione..</p>
       <a href="#" @click="$emit('navigate', 'band')" class="read-more">READ MORE</a>
     </div>
 
@@ -64,10 +64,11 @@
     <div class="info-box latest-lab">
       <h3>LATEST FROM THE LAB</h3>
       <div class="lab-content">
-        <img src="/images/hero-left.jpg" alt="Latest Work" />
+        <img src="/images/Alaskarma.png" alt="Latest Work" />
       </div>
-      <p>WORKING ON OUR DEBUT ALBUM</p>
-      <p class="small">STAY TUNED</p>
+      <p>Un piccolo esperimento con una registraizione in sala prove</p>
+      <p class="small">Drive Safe!</p>
+      <a href="#" @click="$emit('navigate', 'media')" class="read-more">VIEW VIDEOS</a>
     </div>
 
     <!-- Upcoming Shows Box -->
@@ -309,32 +310,7 @@ const stopDrag = () => {
   pointer-events: auto;
 }
 
-@media (max-width: 768px) {
-  .hero-content {
-    padding: 0 20px;
-  }
 
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 0.75rem;
-    margin: 0;
-  }
-
-  .cta-button svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .reveal-handle {
-    width: 40px;
-    height: 40px;
-  }
-}
 
 /* Info Boxes Section */
 .info-boxes {
@@ -515,6 +491,38 @@ const stopDrag = () => {
   .info-boxes {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 20px;
+    bottom: 5rem;
+  }
+  .hero-content h2 {
+    font-size: clamp(1rem, 5vw, 1.8rem);
+  }
+  .info-boxes{
+    margin: -8rem auto 4rem auto;
+  }
+  .hero-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    margin: 0;
+  }
+
+  .cta-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .reveal-handle {
+    width: 40px;
+    height: 40px;
   }
 }
 </style>
