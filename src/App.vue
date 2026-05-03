@@ -26,16 +26,18 @@
       </div>
 
       <!-- Mobile Menu Drawer -->
-      <nav class="mobile-menu" :class="{ open: mobileMenuOpen }">
+      <nav class="mobile-menu">
+        <div class="mobile-menu-links" :class="{ open: mobileMenuOpen }">
+          <a href="#home" @click="currentPage = 'home'; mobileMenuOpen = false">HOME</a>
+          <a href="#band" @click="currentPage = 'band'; mobileMenuOpen = false">BAND</a>
+          <a href="#music" @click="currentPage = 'music'; mobileMenuOpen = false">MUSIC</a>
+          <a href="#live" @click="currentPage = 'live'; mobileMenuOpen = false">LIVE</a>
+          <a href="#media" @click="currentPage = 'media'; mobileMenuOpen = false">MEDIA</a>
+          <a href="#contact" @click="currentPage = 'contact'; mobileMenuOpen = false">CONTACT</a>
+        </div>
         <div class="mobile-menu-logo" @click="mobileMenuOpen = !mobileMenuOpen">
           <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
         </div>
-        <a href="#home" @click="currentPage = 'home'; mobileMenuOpen = false">HOME</a>
-        <a href="#band" @click="currentPage = 'band'; mobileMenuOpen = false">BAND</a>
-        <a href="#music" @click="currentPage = 'music'; mobileMenuOpen = false">MUSIC</a>
-        <a href="#live" @click="currentPage = 'live'; mobileMenuOpen = false">LIVE</a>
-        <a href="#media" @click="currentPage = 'media'; mobileMenuOpen = false">MEDIA</a>
-        <a href="#contact" @click="currentPage = 'contact'; mobileMenuOpen = false">CONTACT</a>
       </nav>
     </header>
 
@@ -259,15 +261,21 @@ footer p {
   flex-direction: column;
   gap: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+  height: 100vh;
   z-index: 200;
 }
 
-.mobile-menu.open {
-  max-height: 500px;
-  overflow-y: auto;
+.mobile-menu-links {
+  position: relative;
+  top: -250px;
+  transition: top 0.3s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-links.open {
+  top: 0;
 }
 
 .mobile-menu-logo {
@@ -276,9 +284,9 @@ footer p {
   justify-content: center;
   padding: 1rem 2rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 0 0 30px 30px;
+  border-radius: 30px 30px 0 0;
   cursor: pointer;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-menu-logo .band-logo {
