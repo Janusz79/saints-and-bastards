@@ -1,7 +1,12 @@
 <template>
   <section class="hero-container">
     <!-- Hero Reveal Slider -->
-    <div class="hero-reveal" ref="revealContainer">
+    <div 
+      class="hero-reveal" 
+      ref="revealContainer"
+      @mousedown="startDrag"
+      @touchstart="startDrag"
+    >
       <!-- Right Image (background) -->
       <div class="hero-image hero-right">
         <img src="/images/hero-right.jpg" alt="Hero Right" />
