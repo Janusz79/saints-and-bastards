@@ -29,9 +29,27 @@
 
       <!-- Hero Text Overlay -->
       <div class="hero-content">
-        <h2>SAINTS & BASTARDS</h2>
-        <p>Experience the sound that moves you</p>
-        <button @click="$emit('navigate', 'music')" class="cta-button">DISCOVER MUSIC</button>
+        <div class="hero-text">
+          <h2>SAINTS & BASTARDS</h2>
+          <p>EVERY SAINT HAS A BASTARD SIDE</p>
+        </div>
+        
+        <div class="hero-buttons">
+          <button class="cta-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 5.14v13.72c0 .6.64.94 1.14.59l11.07-6.86c.5-.31.5-1.09 0-1.4L9.14 4.55C8.64 4.2 8 4.54 8 5.14Z" fill="black"/>
+            </svg>
+            LISTEN
+          </button>
+          <button class="cta-button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 7l-7 5 7 5V7z"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+            WATCH
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -91,17 +109,19 @@ const stopDrag = () => {
 <style scoped>
 .hero-container {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #1a1a1a;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-reveal {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   cursor: grab;
 }
@@ -176,13 +196,22 @@ const stopDrag = () => {
 
 .hero-content {
   position: absolute;
-  top: 50%;
+  bottom: 60px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
   z-index: 4;
   color: white;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+.hero-text {
+  margin-bottom: 2rem;
   pointer-events: none;
 }
 
@@ -190,38 +219,55 @@ const stopDrag = () => {
   font-size: clamp(2rem, 8vw, 5rem);
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
 .hero-content p {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  margin: 0 0 2rem 0;
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0;
   font-weight: 300;
   letter-spacing: 2px;
 }
 
 .cta-button {
-  padding: 15px 40px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 30px;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   border: 2px solid white;
   border-radius: 0;
   font-family: 'Orbitron', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s;
   text-transform: uppercase;
   pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 10px;
+}
+
+.cta-button svg {
+  width: 20px;
+  height: 20px;
 }
 
 .cta-button:hover {
   background: white;
   color: #1a1a1a;
   transform: scale(1.05);
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {
