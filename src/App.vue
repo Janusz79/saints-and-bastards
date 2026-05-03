@@ -41,7 +41,7 @@
       </nav>
     </header>
 
-    <main>
+    <main :class="`page-${currentPage}`">
       <Home v-if="currentPage === 'home'" @navigate="currentPage = $event" />
       <Band v-if="currentPage === 'band'" />
       <Music v-if="currentPage === 'music'" />
@@ -245,6 +245,31 @@ main {
   flex: 1;
   padding: 0;
   background: #000;
+}
+
+/* Page-specific backgrounds */
+main.page-home {
+  background: #000;
+}
+
+main.page-band {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(255, 107, 107, 0.2)), #000;
+}
+
+main.page-music {
+  background: linear-gradient(135deg, rgba(0, 50, 100, 0.3), rgba(100, 150, 255, 0.2)), #000;
+}
+
+main.page-live {
+  background: linear-gradient(135deg, rgba(100, 0, 100, 0.3), rgba(200, 100, 255, 0.2)), #000;
+}
+
+main.page-media {
+  background: linear-gradient(135deg, rgba(100, 100, 0, 0.3), rgba(255, 255, 100, 0.2)), #000;
+}
+
+main.page-contact {
+  background: linear-gradient(135deg, rgba(0, 100, 100, 0.3), rgba(100, 255, 255, 0.2)), #000;
 }
 
 footer {
