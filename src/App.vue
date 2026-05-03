@@ -13,7 +13,7 @@
         </nav>
 
         <!-- Center Logo -->
-        <div class="logo">
+        <div class="logo" @click="mobileMenuOpen = !mobileMenuOpen">
           <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
         </div>
 
@@ -24,6 +24,16 @@
           <a href="#contact" @click="currentPage = 'contact'">CONTACT</a>
         </nav>
       </div>
+
+      <!-- Mobile Menu Drawer -->
+      <nav class="mobile-menu" :class="{ open: mobileMenuOpen }">
+        <a href="#home" @click="currentPage = 'home'; mobileMenuOpen = false">HOME</a>
+        <a href="#band" @click="currentPage = 'band'; mobileMenuOpen = false">BAND</a>
+        <a href="#music" @click="currentPage = 'music'; mobileMenuOpen = false">MUSIC</a>
+        <a href="#live" @click="currentPage = 'live'; mobileMenuOpen = false">LIVE</a>
+        <a href="#media" @click="currentPage = 'media'; mobileMenuOpen = false">MEDIA</a>
+        <a href="#contact" @click="currentPage = 'contact'; mobileMenuOpen = false">CONTACT</a>
+      </nav>
     </header>
 
     <main>
@@ -56,6 +66,7 @@ import Media from './components/Media.vue'
 import Contact from './components/Contact.vue'
 
 const currentPage = ref('home')
+const mobileMenuOpen = ref(false)
 </script>
 
 <style scoped>
@@ -173,7 +184,7 @@ header {
 }
 
 .band-logo {
-  height: 60px;
+  height: 90px;
   width: auto;
   opacity: 0.95;
   transition: opacity 0.3s;
@@ -231,6 +242,46 @@ footer p {
   color: #fff;
 }
 
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu.open {
+  max-height: 400px;
+}
+
+.mobile-menu a {
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @media (max-width: 768px) {
   .nav-wrapper {
     flex-wrap: wrap;
@@ -239,9 +290,15 @@ footer p {
 
   .nav-left,
   .nav-right {
-    flex: 1;
-    gap: 1rem;
-    font-size: 0.8rem;
+    display: none;
+  }
+
+  .logo {
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: flex;
   }
 
   .logo h1 {
