@@ -1,6 +1,8 @@
 <template>
   <section class="band">
     <h2>LA BAND</h2>
+    
+    <!-- First row: 3 members -->
     <div class="band-members">
       <div class="member">
         <div class="member-avatar">CBA</div>
@@ -20,6 +22,10 @@
         <p class="role">Chitarra</p>
         <p class="bio">Chitarrista solista della band, con un talento per i assoli coinvolgenti.</p>
       </div>
+    </div>
+
+    <!-- Second row: 2 members centered -->
+    <div class="band-members-bottom">
       <div class="member">
         <div class="member-avatar">DAS</div>
         <h3>Davide Alessandro Simoncini</h3>
@@ -60,6 +66,14 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.band-members-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 700px;
+  margin: 2rem auto 0;
 }
 
 .member:nth-child(4) {
