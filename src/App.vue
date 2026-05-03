@@ -86,7 +86,9 @@ const currentPage = ref('home')
   flex-direction: column;
   min-height: 100vh;
 }
-3);
+
+header {
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   border-bottom: 1px solid rgba(255, 107, 107, 0.2);
@@ -255,7 +257,5 @@ footer p {
     width: 18px;
     height: 18px;
   }
-.social a:hover {
-  color: #fff;
 }
 </style>
