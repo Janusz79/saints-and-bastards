@@ -26,8 +26,8 @@
       </div>
 
       <!-- Mobile Menu Drawer -->
-      <nav class="mobile-menu">
-        <div class="mobile-menu-links" :class="{ open: mobileMenuOpen }">
+      <nav class="mobile-menu" :class="{ open: mobileMenuOpen }">
+        <div class="mobile-menu-links">
           <a href="#home" @click="currentPage = 'home'; mobileMenuOpen = false">HOME</a>
           <a href="#band" @click="currentPage = 'band'; mobileMenuOpen = false">BAND</a>
           <a href="#music" @click="currentPage = 'music'; mobileMenuOpen = false">MUSIC</a>
@@ -258,23 +258,21 @@ footer p {
   width: 100%;
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   height: 100vh;
   z-index: 200;
+  overflow: hidden;
 }
 
 .mobile-menu-links {
   position: relative;
   top: -250px;
   transition: top 0.3s ease;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.mobile-menu-links.open {
+.mobile-menu.open .mobile-menu-links {
   top: 0;
 }
 
