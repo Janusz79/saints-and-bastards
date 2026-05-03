@@ -27,6 +27,9 @@
 
       <!-- Mobile Menu Drawer -->
       <nav class="mobile-menu" :class="{ open: mobileMenuOpen }">
+        <div class="mobile-menu-logo" @click="mobileMenuOpen = !mobileMenuOpen">
+          <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
+        </div>
         <a href="#home" @click="currentPage = 'home'; mobileMenuOpen = false">HOME</a>
         <a href="#band" @click="currentPage = 'band'; mobileMenuOpen = false">BAND</a>
         <a href="#music" @click="currentPage = 'music'; mobileMenuOpen = false">MUSIC</a>
@@ -97,6 +100,7 @@ header {
   right: 2rem;
   display: flex;
   gap: 1.5rem;
+  z-index: 201;
 }
 
 .social-top a {
@@ -245,8 +249,8 @@ footer p {
 /* Mobile Menu */
 .mobile-menu {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;
@@ -258,10 +262,33 @@ footer p {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+  z-index: 200;
 }
 
 .mobile-menu.open {
-  max-height: 400px;
+  max-height: 500px;
+}
+
+.mobile-menu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0 0 30px 30px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-logo .band-logo {
+  height: 50px;
+  width: auto;
+  opacity: 0.95;
+  transition: opacity 0.3s;
+}
+
+.mobile-menu-logo:active .band-logo {
+  opacity: 1;
 }
 
 .mobile-menu a {
@@ -294,7 +321,7 @@ footer p {
   }
 
   .logo {
-    cursor: pointer;
+    display: none;
   }
 
   .mobile-menu {
