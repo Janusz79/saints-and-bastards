@@ -42,9 +42,20 @@
         <h3>Podcast</h3>
         <p>Behind the Scenes</p>
       </div>
-    </div>
-  </section>
-</template>
+      <div class="media-item video-player">
+        <video width="100%" height="100%" controls poster="/images/hero-left.jpg">
+          <source src="/video/Alaskarma.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>Alaskarma</h3>
+      </div>
+      <div class="media-item video-player">
+        <video width="100%" height="100%" controls poster="/images/hero-right.jpg">
+          <source src="/video/No one Live @PoolJazz.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>No one Live @PoolJazz</h3>
+      </div>
 
 <script setup>
 </script>
@@ -116,6 +127,23 @@
 
 .media-item.video .media-thumb {
   background: rgba(255, 0, 0, 0.1);
+}
+
+.media-item.video-player {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-item.video-player video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.media-item.video-player h3 {
+  padding: 1rem 1.5rem 0.5rem;
 }
 
 .media-item.video .media-thumb {
