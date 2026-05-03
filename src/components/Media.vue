@@ -3,14 +3,14 @@
     <h2>Media</h2>
     <div class="media-grid">
       <div class="media-item video-player">
-        <video width="100%" height="100%" controls poster="/images/Alaskarma.png">
+        <video width="100%" height="100%" controls preload="metadata" poster="/images/Alaskarma.png">
           <source src="/video/Alaskarma.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <h3>Alaskarma</h3>
       </div>
       <div class="media-item video-player">
-        <video width="100%" height="100%" controls poster="/images/No one Live @PoolJazz.png">
+        <video width="100%" height="100%" controls preload="metadata" poster="/images/No one Live @PoolJazz.png">
           <source src="/video/No one Live @PoolJazz.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
