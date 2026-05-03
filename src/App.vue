@@ -42,7 +42,7 @@
     </header>
 
     <main>
-      <Home v-if="currentPage === 'home'" />
+      <Home v-if="currentPage === 'home'" @navigate="currentPage = $event" />
       <Band v-if="currentPage === 'band'" />
       <Music v-if="currentPage === 'music'" />
       <Live v-if="currentPage === 'live'" />
