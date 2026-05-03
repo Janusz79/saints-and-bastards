@@ -12,21 +12,6 @@
         <img src="/images/hero-left.jpg" alt="Hero Left" />
       </div>
 
-      <!-- Reveal Line (draggable) -->
-      <div 
-        class="reveal-line" 
-        :style="{ left: `${revealPosition}%` }"
-        @mousedown="startDrag"
-        @touchstart="startDrag"
-      >
-        <div class="reveal-handle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15 18 21 12 15 6"></polyline>
-            <polyline points="9 18 3 12 9 6"></polyline>
-          </svg>
-        </div>
-      </div>
-
       <!-- Gradient Overlay (top to bottom, black to transparent) -->
       <div class="hero-gradient-overlay"></div>
 
@@ -163,21 +148,6 @@ const stopDrag = () => {
   transition: clip-path 0.05s linear;
 }
 
-.reveal-line {
-  position: absolute;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  z-index: 3;
-  transform: translateX(-50%);
-  transition: left 0.05s linear;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
 .hero-gradient-overlay {
   position: absolute;
   top: 0;
@@ -187,31 +157,6 @@ const stopDrag = () => {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   z-index: 2;
   pointer-events: none;
-}
-
-.reveal-handle {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: grab;
-  color: #1a1a1a;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s;
-}
-
-.reveal-handle:hover {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-.reveal-handle svg {
-  width: 24px;
-  height: 24px;
 }
 
 .hero-content {
