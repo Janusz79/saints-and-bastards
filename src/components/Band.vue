@@ -3,26 +3,32 @@
     <h2>LA BAND</h2>
     <div class="band-members">
       <div class="member">
-        <div class="member-avatar">JS</div>
-        <h3>John Smith</h3>
+        <div class="member-avatar">CBA</div>
+        <h3>Christian Bernard Allison</h3>
         <p class="role">Voce</p>
-        <p class="bio">Frontman della band dal 2015, con una voce che fa vibrare le folle.</p>
+        <p class="bio">Frontman della band dal 2025, con una voce che fa vibrare le folle.</p>
       </div>
       <div class="member">
-        <div class="member-avatar">MD</div>
-        <h3>Marco Del Rio</h3>
+        <div class="member-avatar">EP</div>
+        <h3>Enrico Pardini</h3>
+        <p class="role">Chitarra e Synth</p>
+        <p class="bio">Chitarrista e tastierista della band, con un talento per i riff coinvolgenti.</p>
+      </div>
+      <div class="member">
+        <div class="member-avatar">RL</div>
+        <h3>Riccardo Lari</h3>
         <p class="role">Chitarra</p>
-        <p class="bio">Chitarrista virtuoso, autore di tutti i riff più esplosivi.</p>
+        <p class="bio">Chitarrista solista della band, con un talento per i assoli coinvolgenti.</p>
       </div>
       <div class="member">
-        <div class="member-avatar">LC</div>
-        <h3>Luca Conti</h3>
+        <div class="member-avatar">DAS</div>
+        <h3>Davide Alessandro Simoncini</h3>
         <p class="role">Basso</p>
         <p class="bio">Il groove maker, il cuore ritmico della band.</p>
       </div>
       <div class="member">
-        <div class="member-avatar">AF</div>
-        <h3>Andrea Falcon</h3>
+        <div class="member-avatar">TG</div>
+        <h3>Tommaso Giorgi</h3>
         <p class="role">Batteria</p>
         <p class="bio">Batterista esplosivo, regista della potenza del suono.</p>
       </div>
@@ -50,8 +56,9 @@
 
 .band-members {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  justify-content: center;
 }
 
 .member {
