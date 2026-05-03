@@ -235,7 +235,7 @@ const stopDrag = () => {
 
 .hero-content {
   position: absolute;
-  bottom: 60px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -255,16 +255,16 @@ const stopDrag = () => {
 }
 
 .hero-content h2 {
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.1rem, 3.5vw, 2.2rem);
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.2rem 0;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
 .hero-content p {
-  font-size: clamp(0.6rem, 1.5vw, 0.9rem);
+  font-size: clamp(0.5rem, 1vw, 0.7rem);
   margin: 0;
   font-weight: 300;
   letter-spacing: 2px;
@@ -326,7 +326,7 @@ const stopDrag = () => {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   max-width: 1400px;
-  margin: 4rem auto;
+  margin: -2rem auto 4rem auto;
   padding: 4rem 2rem;
   background: #000;
 }
