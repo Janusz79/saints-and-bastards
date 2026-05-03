@@ -27,6 +27,9 @@
         </div>
       </div>
 
+      <!-- Gradient Overlay (top to bottom, black to transparent) -->
+      <div class="hero-gradient-overlay"></div>
+
       <!-- Hero Text Overlay -->
       <div class="hero-content">
         <div class="hero-text">
@@ -169,6 +172,17 @@ const stopDrag = () => {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: 2;
+  pointer-events: none;
+}
+
 .reveal-handle {
   position: absolute;
   width: 50px;
@@ -216,16 +230,16 @@ const stopDrag = () => {
 }
 
 .hero-content h2 {
-  font-size: clamp(2rem, 8vw, 5rem);
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.3rem 0;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
 .hero-content p {
-  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  font-size: clamp(0.6rem, 1.5vw, 0.9rem);
   margin: 0;
   font-weight: 300;
   letter-spacing: 2px;
