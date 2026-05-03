@@ -1,64 +1,237 @@
 <template>
-  <section class="home">
-    <div class="hero">
-      <h2>Saints & Bastards</h2>
-      <p>La miglior band rock della scena</p>
-      <button class="cta-btn">Ascolta Ora</button>
+  <section class="hero-container">
+    <!-- Hero Reveal Slider -->
+    <div class="hero-reveal" ref="revealContainer">
+      <!-- Right Image (background) -->
+      <div class="hero-image hero-right">
+        <img src="/images/hero-right.jpg" alt="Hero Right" />
+      </div>
+
+      <!-- Left Image (clip) -->
+      <div class="hero-image hero-left" :style="{ clipPath: `polygon(0 0, ${revealPosition}% 0, ${revealPosition}% 100%, 0 100%)` }">
+        <img src="/images/hero-left.jpg" alt="Hero Left" />
+      </div>
+
+      <!-- Reveal Line (draggable) -->
+      <div 
+        class="reveal-line" 
+        :style="{ left: `${revealPosition}%` }"
+        @mousedown="startDrag"
+        @touchstart="startDrag"
+      >
+        <div class="reveal-handle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 21 12 15 6"></polyline>
+            <polyline points="9 18 3 12 9 6"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Hero Text Overlay -->
+      <div class="hero-content">
+        <h2>SAINTS & BASTARDS</h2>
+        <p>Experience the sound that moves you</p>
+        <button @click="$emit('navigate', 'music')" class="cta-button">DISCOVER MUSIC</button>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const revealContainer = ref(null)
+const revealPosition = ref(50)
+const isDragging = ref(false)
+const targetPosition = ref(50)
+
+const startDrag = (e) => {
+  isDragging.value = true
+  document.addEventListener('mousemove', onDrag)
+  document.addEventListener('mouseup', stopDrag)
+  document.addEventListener('touchmove', onDrag)
+  document.addEventListener('touchend', stopDrag)
+}
+
+const onDrag = (e) => {
+  if (!isDragging.value || !revealContainer.value) return
+
+  const rect = revealContainer.value.getBoundingClientRect()
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX
+  const x = clientX - rect.left
+  const percent = Math.max(0, Math.min(100, (x / rect.width) * 100))
+  
+  revealPosition.value = percent
+}
+
+const stopDrag = () => {
+  isDragging.value = false
+  targetPosition.value = 50
+  
+  // Smooth animation back to center
+  const animate = () => {
+    const diff = targetPosition.value - revealPosition.value
+    if (Math.abs(diff) > 0.1) {
+      revealPosition.value += diff * 0.1
+      requestAnimationFrame(animate)
+    } else {
+      revealPosition.value = 50
+    }
+  }
+  
+  animate()
+  
+  document.removeEventListener('mousemove', onDrag)
+  document.removeEventListener('mouseup', stopDrag)
+  document.removeEventListener('touchmove', onDrag)
+  document.removeEventListener('touchend', stopDrag)
+}
 </script>
 
 <style scoped>
-.home {
-  padding: 4rem 2rem;
+.hero-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
 }
 
-.hero {
-  text-align: center;
-  padding: 3rem 0;
-  animation: fadeIn 1s ease-in;
+.hero-reveal {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: grab;
 }
 
-.hero h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #ff6b6b;
-  text-transform: uppercase;
+.hero-reveal:active {
+  cursor: grabbing;
 }
 
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #ccc;
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.cta-btn {
-  padding: 1rem 2rem;
-  background: #ff6b6b;
-  color: #fff;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-right {
+  z-index: 1;
+}
+
+.hero-left {
+  z-index: 2;
+  transition: clip-path 0.05s linear;
+}
+
+.reveal-line {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 3;
+  transform: translateX(-50%);
+  transition: left 0.05s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.reveal-handle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
+}
+
+.reveal-handle:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.reveal-handle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 4;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+.hero-content h2 {
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
-.cta-btn:hover {
-  background: #ff5252;
+.hero-content p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin: 0 0 2rem 0;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+.cta-button {
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  pointer-events: auto;
+}
+
+.cta-button:hover {
+  background: white;
+  color: #1a1a1a;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 20px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .reveal-handle {
+    width: 40px;
+    height: 40px;
   }
 }
 </style>
