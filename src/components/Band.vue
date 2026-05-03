@@ -6,7 +6,7 @@
     <div class="band-members">
       <div class="member">
         <div class="member-image">
-          <img src="/images/christian.png" alt="Christian Bernard Allison" />
+          <img src="/images/christian.png" alt="Christian Bernard Allison" @error="handleImageError" />
         </div>
         <h3>Christian Bernard Allison</h3>
         <p class="role">Voce</p>
@@ -14,7 +14,7 @@
       </div>
       <div class="member">
         <div class="member-image">
-          <img src="/images/enrico.png" alt="Enrico Pardini" />
+          <img src="/images/enrico.png" alt="Enrico Pardini" @error="handleImageError" />
         </div>
         <h3>Enrico Pardini</h3>
         <p class="role">Chitarra e Synth</p>
@@ -22,7 +22,7 @@
       </div>
       <div class="member">
         <div class="member-image">
-          <img src="/images/riccardo.png" alt="Riccardo Lari" />
+          <img src="/images/riccardo.png" alt="Riccardo Lari" @error="handleImageError" />
         </div>
         <h3>Riccardo Lari</h3>
         <p class="role">Chitarra</p>
@@ -34,7 +34,7 @@
     <div class="band-members-bottom">
       <div class="member">
         <div class="member-image">
-          <img src="/images/davide.png" alt="Davide Alessandro Simoncini" />
+          <img src="/images/davide.png" alt="Davide Alessandro Simoncini" @error="handleImageError" />
         </div>
         <h3>Davide Alessandro Simoncini</h3>
         <p class="role">Basso</p>
@@ -42,7 +42,7 @@
       </div>
       <div class="member">
         <div class="member-image">
-          <img src="/images/tommaso.png" alt="Tommaso Giorgi" />
+          <img src="/images/tommaso.png" alt="Tommaso Giorgi" @error="handleImageError" />
         </div>
         <h3>Tommaso Giorgi</h3>
         <p class="role">Batteria</p>
@@ -53,6 +53,9 @@
 </template>
 
 <script setup>
+const handleImageError = (e) => {
+  e.target.classList.add('image-error')
+}
 </script>
 
 <style scoped>
@@ -119,6 +122,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .member-image img {
@@ -126,6 +130,18 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
+}
+
+.member-image img.image-error {
+  display: none;
+}
+
+.member-image::after {
+  content: '🎸';
+  position: absolute;
+  font-size: 3rem;
+  color: rgba(255, 107, 107, 0.5);
+  z-index: 1;
 }
 
 .member h3 {
