@@ -34,9 +34,9 @@
           <a href="#live" @click="currentPage = 'live'; mobileMenuOpen = false">LIVE</a>
           <a href="#media" @click="currentPage = 'media'; mobileMenuOpen = false">MEDIA</a>
           <a href="#contact" @click="currentPage = 'contact'; mobileMenuOpen = false">CONTACT</a>
-        </div>
-        <div class="mobile-menu-logo" @click="mobileMenuOpen = !mobileMenuOpen">
-          <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
+          <div class="mobile-menu-logo" @click="mobileMenuOpen = !mobileMenuOpen">
+            <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
+          </div>
         </div>
       </nav>
     </header>
@@ -284,7 +284,7 @@ footer p {
   justify-content: center;
   padding: 1rem 2rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 30px 30px 0 0;
+  border-radius: 0;
   cursor: pointer;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
