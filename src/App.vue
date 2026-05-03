@@ -115,7 +115,7 @@ const socialLinks = {
 
 header {
   background: transparent;
-  background: linear-gradient();
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
   padding: 1rem 2rem;
   border: none;
   position: absolute;
@@ -244,6 +244,10 @@ header {
 main {
   flex: 1;
   padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/bandbg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 footer {

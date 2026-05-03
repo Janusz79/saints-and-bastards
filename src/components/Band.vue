@@ -191,7 +191,7 @@ const handleImageError = (e) => {
     font-size: 1.8rem;
   }
 
-  .band-members {
+  .band-members, .band-members-bottom  {
     grid-template-columns: 1fr;
   }
 
