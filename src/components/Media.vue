@@ -2,46 +2,6 @@
   <section class="media">
     <h2>Media</h2>
     <div class="media-grid">
-      <div class="media-item video">
-        <div class="media-thumb">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <h3>Live at Stadio San Paolo</h3>
-        <p>2025</p>
-      </div>
-      <div class="media-item gallery">
-        <div class="media-thumb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-        </div>
-        <h3>Gallery 2025</h3>
-        <p>Foto dalla band</p>
-      </div>
-      <div class="media-item album">
-        <div class="media-thumb">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="10"/>
-            <circle cx="12" cy="12" r="6" fill="#1a1a1a"/>
-            <circle cx="12" cy="12" r="2"/>
-          </svg>
-        </div>
-        <h3>Album: Rebellion</h3>
-        <p>Out Now</p>
-      </div>
-      <div class="media-item podcast">
-        <div class="media-thumb">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1zm3.5 12c0 1.93-1.57 3.5-3.5 3.5S8.5 14.93 8.5 13H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-1.5z"/>
-          </svg>
-        </div>
-        <h3>Podcast</h3>
-        <p>Behind the Scenes</p>
-      </div>
       <div class="media-item video-player">
         <video width="100%" height="100%" controls poster="/images/hero-left.jpg">
           <source src="/video/Alaskarma.mp4" type="video/mp4">
@@ -56,6 +16,9 @@
         </video>
         <h3>No one Live @PoolJazz</h3>
       </div>
+    </div>
+  </section>
+</template>
 
 <script setup>
 </script>
