@@ -50,10 +50,11 @@ const tracks = ref([
 .music h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #ff6b6b;
+  color: #4fd963;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
+  text-shadow: 0 0 20px rgba(79, 217, 99, 0.4);
 }
 
 .tracks {
@@ -65,7 +66,7 @@ const tracks = ref([
 .track-card {
   background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
-  border: 2px solid rgba(255, 107, 107, 0.4);
+  border: 2px solid rgba(79, 217, 99, 0.4);
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
@@ -85,13 +86,13 @@ const tracks = ref([
 
 .track-card:hover {
   transform: translateY(-8px);
-  border-color: #ff6b6b;
-  background: rgba(255, 107, 107, 0.08);
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
+  border-color: #4fd963;
+  background: rgba(79, 217, 99, 0.08);
+  box-shadow: 0 10px 30px rgba(79, 217, 99, 0.15);
 }
 
 .track-card h3 {
-  color: #ff6b6b;
+  color: #4fd963;
   margin: 0 0 0.3rem 0;
   font-size: 1.1rem;
   font-weight: 600;
@@ -112,7 +113,7 @@ const tracks = ref([
   overflow: hidden;
   position: relative;
   z-index: 1;
-  border: 1px solid rgba(255, 107, 107, 0.2);
+  border: 1px solid rgba(79, 217, 99, 0.2);
 }
 
 .player-container iframe {
@@ -127,10 +128,10 @@ const tracks = ref([
   justify-content: center;
   gap: 0.5rem;
   padding: 0.8rem 1rem;
-  background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 82, 82, 0.08));
-  border: 1px solid rgba(255, 107, 107, 0.3);
+  background: linear-gradient(135deg, rgba(79, 217, 99, 0.15), rgba(212, 96, 58, 0.08));
+  border: 1px solid rgba(79, 217, 99, 0.3);
   border-radius: 4px;
-  color: #ff6b6b;
+  color: #4fd963;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -143,19 +144,19 @@ const tracks = ref([
 }
 
 .soundcloud-link:hover {
-  background: linear-gradient(135deg, rgba(255, 107, 107, 0.25), rgba(255, 82, 82, 0.15));
-  border-color: #ff6b6b;
+  background: linear-gradient(135deg, rgba(79, 217, 99, 0.25), rgba(212, 96, 58, 0.15));
+  border-color: #4fd963;
   transform: translateX(4px);
 }
 
 .soundcloud-link svg {
   width: 16px;
   height: 16px;
-  stroke: #ff6b6b;
+  stroke: #4fd963;
 }
 
 .role {
-  color: #ff6b6b !important;
+  color: #d4603a !important;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.75rem;

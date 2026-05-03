@@ -253,11 +253,18 @@ main.page-home {
 }
 
 main.page-band {
-  background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(255, 107, 107, 0.2)), #000;
+  background:linear-gradient(0deg, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0)) 100%, url(/images/bandbg.webp);  
+  background-size: cover;
+  background-position: center;
+  
+
 }
 
 main.page-music {
-  background: linear-gradient(135deg, rgba(0, 50, 100, 0.3), rgba(100, 150, 255, 0.2)), #000;
+  background: linear-gradient(135deg, rgba(79, 217, 99, 0.3), rgba(212, 96, 58, 0.3)), url('/images/music-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 main.page-live {
