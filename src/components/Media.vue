@@ -3,7 +3,7 @@
     <h2>Media</h2>
     <div class="media-grid">
       <div class="media-item">
-        <a href="https://www.youtube.com/watch?v=ALASKARMA_ID" target="_blank" rel="noopener noreferrer">
+        <a href="https://youtu.be/cfDR3uYVy7A" target="_blank" rel="noopener noreferrer">
           <img src="/images/Alaskarma.png" alt="Alaskarma" class="video-thumbnail" />
           <div class="play-overlay">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -15,8 +15,20 @@
         </a>
       </div>
       <div class="media-item">
-        <a href="https://www.youtube.com/watch?v=NOONE_LIVE_ID" target="_blank" rel="noopener noreferrer">
+        <a href="https://youtu.be/SYLeZL1_ddE" target="_blank" rel="noopener noreferrer">
           <img src="/images/No one Live @PoolJazz.png" alt="No one Live @PoolJazz" class="video-thumbnail" />
+          <div class="play-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <h3>No one Live @PoolJazz</h3>
+          <p class="video-source">Watch on YouTube</p>
+        </a>
+      </div>
+      <div class="media-item">
+        <a href="https://youtu.be/C1F36Cgz9gs" target="_blank" rel="noopener noreferrer">
+          <img src="/images/No One (Sala Prove).png" alt="No one Else But Me (Sala Prove)" class="video-thumbnail" />
           <div class="play-overlay">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z"/>

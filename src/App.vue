@@ -14,7 +14,7 @@
 
         <!-- Center Logo -->
         <div class="logo" @click="mobileMenuOpen = !mobileMenuOpen">
-          <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
+          <img src="/images/LogoNav.webp" alt="Saints and Bastards" class="band-logo" />
         </div>
 
         <!-- Right Navigation -->
@@ -35,7 +35,7 @@
           <a href="#media" @click="currentPage = 'media'; mobileMenuOpen = false">MEDIA</a>
           <a href="#contact" @click="currentPage = 'contact'; mobileMenuOpen = false">CONTACT</a>
           <div class="mobile-menu-logo" @click="mobileMenuOpen = !mobileMenuOpen">
-            <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
+            <img src="/images/LogoNav.webp" alt="Saints and Bastards" class="band-logo" />
           </div>
         </div>
       </nav>
@@ -57,6 +57,29 @@
         <a href="#privacy">Privacy</a>
         <a href="#terms">Terms</a>
       </div>
+      <div class="footer-social">
+        <a :href="socialLinks.facebook" target="_blank" rel="noopener noreferrer" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a :href="socialLinks.instagram" target="_blank" rel="noopener noreferrer" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.217.63c-.68.264-1.277.623-1.834 1.18-.557.557-.916 1.154-1.18 1.834-.297.688-.498 1.558-.557 2.836C.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.836.264.68.623 1.277 1.18 1.834.557.557 1.154.916 1.834 1.18.688.297 1.559.498 2.837.557C8.333 23.985 8.74 24 12 24s3.667-.015 4.947-.072c1.280-.06 2.148-.261 2.836-.558.68-.264 1.277-.623 1.834-1.18.557-.557.916-1.154 1.18-1.834.297-.688.498-1.559.557-2.837.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.558-2.836-.264-.68-.623-1.277-1.18-1.834-.557-.557-1.154-.916-1.834-1.18-.688-.297-1.559-.498-2.837-.557C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.009 4.849.070 1.171.053 1.805.248 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.056.413 2.227.061 1.264.07 1.646.07 4.849s-.009 3.585-.07 4.849c-.053 1.171-.248 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.056.36-2.227.413-1.264.061-1.646.07-4.849.07s-3.585-.009-4.849-.07c-1.171-.053-1.805-.248-2.227-.415-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.056-.413-2.227-.061-1.264-.07-1.646-.07-4.849s.009-3.585.07-4.849c.053-1.171.248-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.056-.36 2.227-.413 1.264-.061 1.646-.07 4.849-.07z"/>
+            <circle cx="12" cy="12" r="3.6"/>
+          </svg>
+        </a>
+        <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+        <a :href="socialLinks.soundcloud" target="_blank" rel="noopener noreferrer" title="SoundCloud">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.3 6.65c-.4 0-.8.3-.8.75v9.1c0 .4.4.75.8.75.4 0 .8-.35.8-.75v-9.1c0-.45-.4-.75-.8-.75zm-2.1 1.85c-.4 0-.7.3-.7.65v7.2c0 .35.3.65.7.65.4 0 .7-.3.7-.65v-7.2c0-.35-.3-.65-.7-.65zm4.2-2.15c-.4 0-.8.3-.8.8v9.6c0 .4.4.8.8.8.4 0 .8-.4.8-.8V6.35c0-.5-.4-.8-.8-.8zm2.1 1.1c-.4 0-.8.35-.8.75v8.35c0 .4.4.75.8.75.4 0 .8-.35.8-.75V7.5c0-.4-.4-.75-.8-.75zm2.1-1.85c-.5 0-.9.3-.9.8v11c0 .5.4.9.9.9.5 0 .9-.4.9-.9v-11c0-.5-.4-.8-.9-.8zm2.1 1.25c-.4 0-.7.35-.7.75v8.8c0 .4.3.75.7.75s.7-.35.7-.75v-8.8c0-.4-.3-.75-.7-.75zm2.1-1.5c-.4 0-.8.3-.8.75v11.05c0 .4.4.75.8.75.4 0 .8-.35.8-.75V6.35c0-.45-.4-.75-.8-.75z"/>
+          </svg>
+        </a>
+      </div>
     </footer>
   </div>
 </template>
@@ -72,6 +95,13 @@ import Contact from './components/Contact.vue'
 
 const currentPage = ref('home')
 const mobileMenuOpen = ref(false)
+
+const socialLinks = {
+  facebook: 'https://www.facebook.com/profile.php?id=61588887734829',
+  instagram: 'https://www.instagram.com/saintsandbastards/',
+  youtube: 'https://www.youtube.com/@SaintsAndBastards',
+  soundcloud: 'https://soundcloud.com/saintsandbastards'
+}
 </script>
 
 <style scoped>
@@ -194,7 +224,7 @@ header {
   width: auto;
   opacity: 0.95;
   transition: opacity 0.3s;
-  filter: brightness(0) invert(1);
+  
 }
 
 .band-logo:hover {
@@ -246,6 +276,33 @@ footer p {
 
 .footer-links a:hover {
   color: #fff;
+}
+
+.footer-social {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.footer-social a {
+  color: #ff6b6b;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social a svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-social a:hover {
+  color: #fff;
+  transform: scale(1.2);
 }
 
 /* Mobile Menu */

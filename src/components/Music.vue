@@ -25,13 +25,11 @@
 import { ref } from 'vue'
 
 const tracks = ref([
-  { id: 1, title: 'Alaskarma', role: 'Experimental', soundcloudId: 'SOUNDCLOUD_ID_1', year: 2025 },
-  { id: 2, title: 'No One', role: 'Single', soundcloudId: 'SOUNDCLOUD_ID_2', year: 2025 },
-  { id: 3, title: 'Passive Aggressive', role: 'Alternative', soundcloudId: 'SOUNDCLOUD_ID_3', year: 2024 },
-  { id: 4, title: 'Suoneria Bastardi', role: 'Interlude', soundcloudId: 'SOUNDCLOUD_ID_4', year: 2025 },
+  { id: 1, title: 'Alaskarma Live', role: 'Live', soundcloudId: '2313943499', year: 2026 },
+  { id: 2, title: 'No One Else But Me', role: 'Sala Prove', soundcloudId: '2313944753', year: 2026 },
+  { id: 3, title: 'Passive Aggressive', role: 'Sala Prove', soundcloudId: '2313944990', year: 2026 },
 ])
 </script>
-
 <style scoped>
 .music {
   padding: 2rem 0;
