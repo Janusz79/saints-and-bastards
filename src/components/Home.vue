@@ -20,6 +20,9 @@
       <!-- Gradient Overlay (top to bottom, black to transparent) -->
       <div class="hero-gradient-overlay"></div>
 
+      <!-- Gradient Overlay (bottom to top, black to transparent) -->
+      <div class="hero-gradient-overlay-bottom"></div>
+
       <!-- Hero Text Overlay -->
       <div class="hero-content">
         <div class="hero-text">
@@ -160,6 +163,17 @@ const stopDrag = () => {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-gradient-overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   z-index: 2;
   pointer-events: none;
 }
