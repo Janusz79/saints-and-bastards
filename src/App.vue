@@ -244,10 +244,7 @@ header {
 main {
   flex: 1;
   padding: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/bandbg.webp');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: #000;
 }
 
 footer {
