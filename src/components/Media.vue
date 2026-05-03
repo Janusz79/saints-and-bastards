@@ -26,6 +26,7 @@
 <style scoped>
 .media {
   padding: 2rem 0;
+  margin-top: 120px;
 }
 
 .media h2 {

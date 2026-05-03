@@ -40,6 +40,7 @@ const formatMonth = (date) => {
 <style scoped>
 .live {
   padding: 2rem 0;
+  margin-top: 120px;
 }
 
 .live h2 {

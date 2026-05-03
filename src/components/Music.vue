@@ -24,6 +24,7 @@ const tracks = ref([
 <style scoped>
 .music {
   padding: 2rem 0;
+  margin-top: 120px;
 }
 
 .music h2 {

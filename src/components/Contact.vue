@@ -45,6 +45,7 @@ const submitForm = () => {
 <style scoped>
 .contact {
   padding: 2rem 0;
+  margin-top: 120px;
 }
 
 .contact h2 {
