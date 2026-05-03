@@ -139,6 +139,10 @@ const stopDrag = () => {
   left: 0;
   width: 100%;
   height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .hero-image img {
@@ -146,6 +150,8 @@ const stopDrag = () => {
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
 
 .hero-right {
