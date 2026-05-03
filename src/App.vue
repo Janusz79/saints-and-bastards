@@ -173,10 +173,11 @@ header {
 }
 
 .band-logo {
-  height: 45px;
+  height: 60px;
   width: auto;
-  opacity: 0.9;
+  opacity: 0.95;
   transition: opacity 0.3s;
+  filter: brightness(0) invert(1);
 }
 
 .band-logo:hover {
