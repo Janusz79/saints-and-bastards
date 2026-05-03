@@ -1,31 +1,7 @@
 <template>
   <div class="container">
     <header>
-      <!-- Social Media Top Right -->
-      <div class="social-top">
-        <a href="https://instagram.com" target="_blank" title="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/>
-            <circle cx="17.5" cy="6.5" r="1.5"/>
-          </svg>
-        </a>
-        <a href="https://youtube.com" target="_blank" title="YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-          </svg>
-        </a>
-        <a href="https://facebook.com" target="_blank" title="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        </a>
-        <a href="https://spotify.com" target="_blank" title="Spotify">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.6 17.3c-.3.5-.9.7-1.4.4-3.8-2.3-8.6-2.8-14.3-1.5-.6.1-1.2-.3-1.3-.9-.1-.6.3-1.2.9-1.3 6.3-1.5 11.6-.9 15.9 1.8.5.3.7.9.4 1.4zm1.5-3.3c-.4.6-1.1.8-1.7.4-4.3-2.7-10.9-3.5-16.1-1.9-.6.2-1.3-.1-1.5-.7-.2-.6.1-1.3.7-1.5 5.8-1.8 13-1 17.9 2.2.6.4.8 1.1.4 1.7zm.1-3.5c-5.1-3.1-13.5-3.4-18.4-1.9-.7.2-1.4-.2-1.6-.9-.2-.7.2-1.4.9-1.6 5.5-1.7 14.6-1.4 20.2 2.2.6.4 1 1.1.6 1.7-.4.6-1.1.9-1.7.5z"/>
-          </svg>
-        </a>
-      </div>
+
 
       <!-- Main Header Navigation -->
       <div class="nav-wrapper">
@@ -38,7 +14,7 @@
 
         <!-- Center Logo -->
         <div class="logo">
-          <h1>SAINTS & BASTARDS</h1>
+          <img src="/images/LogoSaintsAndBastards.svg" alt="Saints and Bastards" class="band-logo" />
         </div>
 
         <!-- Right Navigation -->
@@ -83,18 +59,24 @@ const currentPage = ref('home')
 </script>
 
 <style scoped>
+
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+   background: black !important;
 }
 
 header {
   background: transparent;
-  backdrop-filter: blur(10px);
+  background: linear-gradient();
   padding: 1rem 2rem;
   border: none;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 100;
 }
 
@@ -185,10 +167,24 @@ header {
 .logo {
   flex: 0 0 auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.band-logo {
+  height: 45px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.band-logo:hover {
+  opacity: 1;
 }
 
 .logo h1 {
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -199,7 +195,7 @@ header {
 
 main {
   flex: 1;
-  padding: 2rem;
+  padding: 0;
 }
 
 footer {
