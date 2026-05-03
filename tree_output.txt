@@ -5,9 +5,31 @@ D:\Projects\Saints and Bastards
    │  └──
    ├──dist
    │  ├──assets
-   │  │  ├──index-0c76974c.css
-   │  │  └──index-4edde2c0.js
-   │  └──index.html
+   │  │  ├──index-4728913a.js
+   │  │  └──index-c5e6597a.css
+   │  ├──Audio
+   │  │  ├──Alaskarma Edit 2 Exp_auto_16bit_44hz_target-10.mp3
+   │  │  ├──No one.mp3
+   │  │  ├──Passive Aggressive E_auto_16bit_44hz_target-10.mp3
+   │  │  └──suoneriaBastardi.mp3
+   │  ├──images
+   │  │  ├──Alaskarma.png
+   │  │  ├──hero-left.jpg
+   │  │  ├──hero-right.jpg
+   │  │  ├──LogoSaintsAndBastards.svg
+   │  │  └──No one Live @PoolJazz.png
+   │  ├──video
+   │  │  ├──Alaskarma.mp4
+   │  │  └──No one Live @PoolJazz.mp4
+   │  ├──android-chrome-192x192.png
+   │  ├──android-chrome-512x512.png
+   │  ├──apple-touch-icon.png
+   │  ├──favicon-16x16.png
+   │  ├──favicon-32x32.png
+   │  ├──favicon.ico
+   │  ├──index.html
+   │  ├──site.webmanifest
+   │  └──sitemap.xml
    ├──public
    │  ├──Audio
    │  │  ├──Alaskarma Edit 2 Exp_auto_16bit_44hz_target-10.mp3
