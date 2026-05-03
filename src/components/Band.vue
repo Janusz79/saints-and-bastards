@@ -5,19 +5,25 @@
     <!-- First row: 3 members -->
     <div class="band-members">
       <div class="member">
-        <div class="member-avatar"></div>
+        <div class="member-image">
+          <img src="/images/christian.png" alt="Christian Bernard Allison" />
+        </div>
         <h3>Christian Bernard Allison</h3>
         <p class="role">Voce</p>
         <p class="bio">Frontman della band dal 2025, con una voce che fa vibrare le folle.</p>
       </div>
       <div class="member">
-        <div class="member-avatar"></div>
+        <div class="member-image">
+          <img src="/images/enrico.png" alt="Enrico Pardini" />
+        </div>
         <h3>Enrico Pardini</h3>
         <p class="role">Chitarra e Synth</p>
         <p class="bio">Chitarrista e tastierista della band, con un talento per i riff coinvolgenti.</p>
       </div>
       <div class="member">
-        <div class="member-avatar"></div>
+        <div class="member-image">
+          <img src="/images/riccardo.png" alt="Riccardo Lari" />
+        </div>
         <h3>Riccardo Lari</h3>
         <p class="role">Chitarra</p>
         <p class="bio">Chitarrista solista della band, con un talento per i assoli coinvolgenti.</p>
@@ -27,13 +33,17 @@
     <!-- Second row: 2 members centered -->
     <div class="band-members-bottom">
       <div class="member">
-        <div class="member-avatar"></div>
+        <div class="member-image">
+          <img src="/images/davide.png" alt="Davide Alessandro Simoncini" />
+        </div>
         <h3>Davide Alessandro Simoncini</h3>
         <p class="role">Basso</p>
         <p class="bio">Il groove maker, il cuore ritmico della band.</p>
       </div>
       <div class="member">
-        <div class="member-avatar"></div>
+        <div class="member-image">
+          <img src="/images/tommaso.png" alt="Tommaso Giorgi" />
+        </div>
         <h3>Tommaso Giorgi</h3>
         <p class="role">Batteria</p>
         <p class="bio">Batterista esplosivo, regista della potenza del suono.</p>
@@ -99,18 +109,23 @@
   transform: translateY(-10px);
 }
 
-.member-avatar {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #ff6b6b, #ff5252);
-  border-radius: 50%;
+.member-image {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 82, 82, 0.1));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .member h3 {
