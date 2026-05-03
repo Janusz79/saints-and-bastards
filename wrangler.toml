@@ -1,6 +1,4 @@
-{
-  "main": "dist",
-  "name": "saints-and-bastards",
-  "type": "javascript",
-  "compatibility_date": "2026-01-01"
-}
+name = "saints-and-bastards"
+type = "javascript"
+main = "dist"
+compatibility_date = "2026-01-01"
