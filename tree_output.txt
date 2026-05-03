@@ -1,0 +1,21 @@
+D:\Projects\Saints and Bastards
+   ├──.github
+   │  ├──workflows
+   │  │  └──deploy.yml
+   │  └──
+   ├──public
+   ├──src
+   │  ├──components
+   │  │  ├──Contact.vue
+   │  │  ├──Home.vue
+   │  │  ├──Music.vue
+   │  │  └──Tour.vue
+   │  ├──App.vue
+   │  └──main.js
+   ├──.gitignore
+   ├──index.html
+   ├──package.json
+   ├──README.md
+   ├──tree_output.txt
+   ├──vite.config.js
+   └──_redirects

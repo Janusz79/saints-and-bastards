@@ -1,0 +1,5 @@
+/* Cloudflare Pages - Rewrite rules */
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
