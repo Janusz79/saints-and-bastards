@@ -73,6 +73,7 @@
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s;
+  position: relative;
 }
 
 .media-item a {
@@ -80,6 +81,7 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  position: relative;
 }
 
 .media-item:hover {
