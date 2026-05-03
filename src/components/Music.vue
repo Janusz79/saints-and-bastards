@@ -5,10 +5,16 @@
       <div v-for="track in tracks" :key="track.id" class="track-card">
         <h3>{{ track.title }}</h3>
         <p class="role">{{ track.role }}</p>
-        <audio controls class="audio-player">
-          <source :src="track.audio" type="audio/mpeg">
-          Your browser does not support the audio tag.
-        </audio>
+        <div class="soundcloud-embed">
+          <iframe 
+            width="100%" 
+            height="166" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            :src="`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${track.soundcloudId}&color=%23ff6b6b&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`">
+          </iframe>
+        </div>
         <p class="meta">{{ track.year }}</p>
       </div>
     </div>
@@ -19,10 +25,10 @@
 import { ref } from 'vue'
 
 const tracks = ref([
-  { id: 1, title: 'Alaskarma', role: 'Experimental', audio: '/Audio/Alaskarma Edit 2 Exp_auto_16bit_44hz_target-10.mp3', year: 2025 },
-  { id: 2, title: 'No One', role: 'Single', audio: '/Audio/No one.mp3', year: 2025 },
-  { id: 3, title: 'Passive Aggressive', role: 'Alternative', audio: '/Audio/Passive Aggressive E_auto_16bit_44hz_target-10.mp3', year: 2024 },
-  { id: 4, title: 'Suoneria Bastardi', role: 'Interlude', audio: '/Audio/suoneriaBastardi.mp3', year: 2025 },
+  { id: 1, title: 'Alaskarma', role: 'Experimental', soundcloudId: 'SOUNDCLOUD_ID_1', year: 2025 },
+  { id: 2, title: 'No One', role: 'Single', soundcloudId: 'SOUNDCLOUD_ID_2', year: 2025 },
+  { id: 3, title: 'Passive Aggressive', role: 'Alternative', soundcloudId: 'SOUNDCLOUD_ID_3', year: 2024 },
+  { id: 4, title: 'Suoneria Bastardi', role: 'Interlude', soundcloudId: 'SOUNDCLOUD_ID_4', year: 2025 },
 ])
 </script>
 
@@ -76,10 +82,15 @@ const tracks = ref([
   letter-spacing: 1px;
 }
 
-.audio-player {
+.soundcloud-embed {
   width: 100%;
   margin: 1rem 0;
-  height: 32px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.soundcloud-embed iframe {
+  border: none;
 }
 
 .meta {

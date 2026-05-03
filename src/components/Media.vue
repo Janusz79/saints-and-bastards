@@ -2,57 +2,36 @@
   <section class="media">
     <h2>Media</h2>
     <div class="media-grid">
-      <div class="media-item video-player" @click="openVideo('Alaskarma', '/video/Alaskarma.mp4')">
-        <img src="/images/Alaskarma.png" alt="Alaskarma" class="video-thumbnail" />
-        <div class="play-overlay">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <h3>Alaskarma</h3>
+      <div class="media-item">
+        <a href="https://www.youtube.com/watch?v=ALASKARMA_ID" target="_blank" rel="noopener noreferrer">
+          <img src="/images/Alaskarma.png" alt="Alaskarma" class="video-thumbnail" />
+          <div class="play-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <h3>Alaskarma</h3>
+          <p class="video-source">Watch on YouTube</p>
+        </a>
       </div>
-      <div class="media-item video-player" @click="openVideo('No one Live @PoolJazz', '/video/No one Live @PoolJazz.mp4')">
-        <img src="/images/No one Live @PoolJazz.png" alt="No one Live @PoolJazz" class="video-thumbnail" />
-        <div class="play-overlay">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <h3>No one Live @PoolJazz</h3>
+      <div class="media-item">
+        <a href="https://www.youtube.com/watch?v=NOONE_LIVE_ID" target="_blank" rel="noopener noreferrer">
+          <img src="/images/No one Live @PoolJazz.png" alt="No one Live @PoolJazz" class="video-thumbnail" />
+          <div class="play-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <h3>No one Live @PoolJazz</h3>
+          <p class="video-source">Watch on YouTube</p>
+        </a>
       </div>
     </div>
-
-    <!-- Video Modal -->
-    <Transition name="modal-fade">
-      <div v-if="showModal" class="video-modal" @click.self="closeVideo">
-        <div class="modal-content">
-          <button class="close-btn" @click="closeVideo">✕</button>
-          <video controls autoplay preload="metadata">
-            <source :src="selectedVideoSrc" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </Transition>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
-const showModal = ref(false)
-const selectedVideoTitle = ref('')
-const selectedVideoSrc = ref('')
-
-const openVideo = (title, src) => {
-  selectedVideoTitle.value = title
-  selectedVideoSrc.value = src
-  showModal.value = true
-}
-
-const closeVideo = () => {
-  showModal.value = false
-}
+// Videos are now hosted on YouTube - links in template
 </script>
 
 <style scoped>
@@ -82,6 +61,12 @@ const closeVideo = () => {
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s;
+}
+
+.media-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -91,45 +76,8 @@ const closeVideo = () => {
   background: rgba(255, 107, 107, 0.1);
 }
 
-.media-thumb {
-  width: 100%;
-  aspect-ratio: 1;
-  background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 82, 82, 0.1));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: #ff6b6b;
-}
-
-.media-thumb svg {
-  width: 80px;
-  height: 80px;
-}
-
-.media-item h3 {
-  color: #fff;
-  padding: 1.5rem 1.5rem 0.5rem;
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.media-item p {
-  color: #aaa;
-  padding: 0 1.5rem 1.5rem;
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.media-item.video .media-thumb {
-  background: rgba(255, 0, 0, 0.1);
-}
-
-.media-item.video-player {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.media-item:hover .play-overlay {
+  background: rgba(255, 107, 107, 0.3);
 }
 
 .video-thumbnail {
@@ -141,117 +89,38 @@ const closeVideo = () => {
 
 .play-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 107, 107, 0.8);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  transition: background 0.3s;
-}
-
-.media-item.video-player:hover .play-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  transition: all 0.3s;
 }
 
 .play-overlay svg {
-  width: 60px;
-  height: 60px;
-  color: #ff6b6b;
+  width: 30px;
+  height: 30px;
 }
 
-.media-item.video-player h3 {
-  padding: 1rem 1.5rem 0.5rem;
-}
-
-/* Video Modal */
-.video-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(5px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
-}
-
-.modal-content {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16 / 9;
-}
-
-.close-btn {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  background: none;
-  border: none;
+.media-item h3 {
   color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1001;
-  transition: color 0.3s;
+  padding: 1.5rem 1.5rem 0.5rem;
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-.close-btn:hover {
+.video-source {
   color: #ff6b6b;
+  padding: 0 1.5rem 1.5rem;
+  margin: 0;
+  font-size: 0.9rem;
 }
-
-.modal-content video {
-  width: 100%;
-  height: 100%;
-}
-
-/* Modal Transition */
-.modal-fade-enter-active,
-.modal-fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.modal-fade-enter-from,
-.modal-fade-leave-to {
-  opacity: 0;
-}
-
-.modal-fade-enter-active .modal-content {
-  animation: modal-slide-in 0.3s ease;
-}
-
-.modal-fade-leave-active .modal-content {
-  animation: modal-slide-out 0.3s ease;
-}
-
-@keyframes modal-slide-in {
-  from {
-    transform: scale(0.9) translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes modal-slide-out {
-  from {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: scale(0.9) translateY(-20px);
-    opacity: 0;
-  }
-}
-
 
 @media (max-width: 768px) {
   .media h2 {
@@ -261,12 +130,6 @@ const closeVideo = () => {
   .media-grid {
     grid-template-columns: repeat(1, 1fr);
     padding: 1rem;
-
-  }
-
-  .media-thumb svg {
-    width: 60px;
-    height: 60px;
   }
 }
 </style>
