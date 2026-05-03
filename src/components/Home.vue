@@ -235,7 +235,7 @@ const stopDrag = () => {
 
 .hero-content {
   position: absolute;
-  bottom: 40px;
+  bottom: 10rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -314,6 +314,22 @@ const stopDrag = () => {
     padding: 0 20px;
   }
 
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    margin: 0;
+  }
+
+  .cta-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
   .reveal-handle {
     width: 40px;
     height: 40px;
@@ -326,9 +342,8 @@ const stopDrag = () => {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   max-width: 1400px;
-  margin: -35rem auto 4rem auto;
+  margin: -12rem auto 4rem auto;
   padding: 4rem 2rem;
-  background: #000;
   position: relative;
   z-index: 10;
 }
