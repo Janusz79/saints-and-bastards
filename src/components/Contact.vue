@@ -21,7 +21,7 @@
         <h3>Info</h3>
         <p><strong>Email:</strong> info@saintsandbastards.com</p>
         <p><strong>Telefono:</strong> +39 123 456 7890</p>
-        <p><strong>Città:</strong> Milano</p>
+        <p><strong>Città:</strong> Viareggio</p>
       </div>
     </div>
   </section>

@@ -27,7 +27,8 @@
       <div class="hero-content">
         <div class="hero-text">
           <h2>SAINTS & BASTARDS</h2>
-          <p>EVERY SAINT HAS A BASTARD SIDE</p>
+          <p>EVERY SAINT HAS A BASTARD INSIDE</p>
+          <p>EVERY BASTARD HAS A SAINT INSIDE</p>
         </div>
         
         <div class="hero-buttons">
