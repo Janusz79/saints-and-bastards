@@ -260,14 +260,14 @@ footer p {
   gap: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   max-height: 0;
-  overflow: visible;
+  overflow: hidden;
   transition: max-height 0.3s ease;
   z-index: 200;
 }
 
 .mobile-menu.open {
-  max-height: 600px;
-  overflow: visible;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .mobile-menu-logo {
