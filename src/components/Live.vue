@@ -22,10 +22,7 @@
 import { ref } from 'vue'
 
 const tourDates = ref([
-  { id: 1, date: '2026-06-15', time: '21:00', venue: 'Stadio San Paolo', city: 'Napoli' },
-  { id: 2, date: '2026-07-22', time: '20:30', venue: 'Arena di Verona', city: 'Verona' },
-  { id: 3, date: '2026-08-10', time: '21:30', venue: 'Palasport Olimpico', city: 'Roma' },
-  { id: 4, date: '2026-09-05', time: '20:00', venue: 'Palalido', city: 'Milano' },
+
 ])
 
 const formatDay = (date) => {
