@@ -4,8 +4,12 @@
     <div class="tracks">
       <div v-for="track in tracks" :key="track.id" class="track-card">
         <h3>{{ track.title }}</h3>
-        <p>Album: <strong>{{ track.album }}</strong></p>
-        <p>{{ track.year }}</p>
+        <p class="role">{{ track.role }}</p>
+        <audio controls class="audio-player">
+          <source :src="track.audio" type="audio/mpeg">
+          Your browser does not support the audio tag.
+        </audio>
+        <p class="meta">{{ track.year }}</p>
       </div>
     </div>
   </section>
@@ -15,9 +19,10 @@
 import { ref } from 'vue'
 
 const tracks = ref([
-  { id: 1, title: 'Wild Hearts', album: 'Rebellion', year: 2025 },
-  { id: 2, title: 'Broken Dreams', album: 'Rebellion', year: 2025 },
-  { id: 3, title: 'Midnight Thunder', album: 'Electric Nights', year: 2024 },
+  { id: 1, title: 'Alaskarma', role: 'Experimental', audio: '/Audio/Alaskarma Edit 2 Exp_auto_16bit_44hz_target-10.mp3', year: 2025 },
+  { id: 2, title: 'No One', role: 'Single', audio: '/Audio/No one.mp3', year: 2025 },
+  { id: 3, title: 'Passive Aggressive', role: 'Alternative', audio: '/Audio/Passive Aggressive E_auto_16bit_44hz_target-10.mp3', year: 2024 },
+  { id: 4, title: 'Suoneria Bastardi', role: 'Interlude', audio: '/Audio/suoneriaBastardi.mp3', year: 2025 },
 ])
 </script>
 
@@ -60,5 +65,25 @@ const tracks = ref([
 
 .track-card p {
   color: #aaa;
+  margin: 0.5rem 0;
+}
+
+.role {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.audio-player {
+  width: 100%;
+  margin: 1rem 0;
+  height: 32px;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #888;
 }
 </style>
