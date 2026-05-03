@@ -5,19 +5,19 @@
     <!-- First row: 3 members -->
     <div class="band-members">
       <div class="member">
-        <div class="member-avatar">CBA</div>
+        <div class="member-avatar"></div>
         <h3>Christian Bernard Allison</h3>
         <p class="role">Voce</p>
         <p class="bio">Frontman della band dal 2025, con una voce che fa vibrare le folle.</p>
       </div>
       <div class="member">
-        <div class="member-avatar">EP</div>
+        <div class="member-avatar"></div>
         <h3>Enrico Pardini</h3>
         <p class="role">Chitarra e Synth</p>
         <p class="bio">Chitarrista e tastierista della band, con un talento per i riff coinvolgenti.</p>
       </div>
       <div class="member">
-        <div class="member-avatar">RL</div>
+        <div class="member-avatar"></div>
         <h3>Riccardo Lari</h3>
         <p class="role">Chitarra</p>
         <p class="bio">Chitarrista solista della band, con un talento per i assoli coinvolgenti.</p>
@@ -27,13 +27,13 @@
     <!-- Second row: 2 members centered -->
     <div class="band-members-bottom">
       <div class="member">
-        <div class="member-avatar">DAS</div>
+        <div class="member-avatar"></div>
         <h3>Davide Alessandro Simoncini</h3>
         <p class="role">Basso</p>
         <p class="bio">Il groove maker, il cuore ritmico della band.</p>
       </div>
       <div class="member">
-        <div class="member-avatar">TG</div>
+        <div class="member-avatar"></div>
         <h3>Tommaso Giorgi</h3>
         <p class="role">Batteria</p>
         <p class="bio">Batterista esplosivo, regista della potenza del suono.</p>
