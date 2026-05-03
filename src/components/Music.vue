@@ -32,67 +32,103 @@ const tracks = ref([
 </script>
 <style scoped>
 .music {
-  padding: 2rem 0;
+  padding: 3rem 2rem;
   margin-top: 120px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .music h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
   color: #ff6b6b;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .tracks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 .track-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
-  border: 1px solid #ff6b6b;
-  border-radius: 5px;
-  transition: transform 0.3s;
+  border: 2px solid rgba(255, 107, 107, 0.4);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(255, 82, 82, 0.02));
+  pointer-events: none;
 }
 
 .track-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 107, 107, 0.1);
+  transform: translateY(-8px);
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.08);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
 }
 
 .track-card h3 {
   color: #ff6b6b;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .track-card p {
   color: #aaa;
   margin: 0.5rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .role {
-  color: #ff6b6b;
+  color: #ff6b6b !important;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem !important;
 }
 
 .soundcloud-embed {
   width: 100%;
-  margin: 1rem 0;
-  border-radius: 5px;
+  margin: 1.5rem 0;
+  border-radius: 6px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 107, 107, 0.2);
 }
 
 .soundcloud-embed iframe {
   border: none;
+  display: block;
 }
 
 .meta {
   font-size: 0.9rem;
   color: #888;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
 }
 </style>
