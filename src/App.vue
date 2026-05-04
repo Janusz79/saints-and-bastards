@@ -261,7 +261,7 @@ main.page-band {
 }
 
 main.page-music {
-  background: linear-gradient(135deg, rgba(79, 217, 99, 0.3), rgba(212, 96, 58, 0.3)), url('/images/music-bg.webp');
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0)), url('/images/musicbg.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

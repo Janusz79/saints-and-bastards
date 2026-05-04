@@ -67,7 +67,7 @@ const handleImageError = (e) => {
 .band h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #ff6b6b;
+  color: #eee;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;

@@ -50,7 +50,7 @@ const tracks = ref([
 .music h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #4fd963;
+  color: #eee;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
@@ -66,7 +66,7 @@ const tracks = ref([
 .track-card {
   background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
-  border: 2px solid rgba(79, 217, 99, 0.4);
+  
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
@@ -92,7 +92,7 @@ const tracks = ref([
 }
 
 .track-card h3 {
-  color: #4fd963;
+  color: #eee;
   margin: 0 0 0.3rem 0;
   font-size: 1.1rem;
   font-weight: 600;
